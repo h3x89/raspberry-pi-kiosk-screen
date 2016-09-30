@@ -30,13 +30,16 @@
 
 	The autostart files needs to look like this:
 	```
-	@lxpanel --profile LXDE
-	@pcmanfm --desktop --profile LXDE
+	@lxpanel --profile LXDE-pi
+	@pcmanfm --desktop --profile LXDE-pi
+	@xscreensaver -no-splash
 	@xset s off
 	@xset -dpms
 	@xset s noblank
 	@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium Default/Preferences
-	@chromium --noerrdialogs --kiosk [URL] --incognito --disable-translate
+	@chromium-browser --noerrdialogs --kiosk [URL] --incognito --disable-translate
+	@unclutter -display :0 -noevents -grab
+
 	```
 
 ## Epiphany Browser ##
